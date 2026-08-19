@@ -1,1 +1,604 @@
- 
+ # bymala – index.html
+
+```html
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>bymala studio</title>
+
+    <meta name="description" content="bymala studio – heklede oppskrifter og crochet designs.">
+
+    <!-- Elegant font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           GRUNNINNSTILLINGER
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #faf9f6;
+            color: #252525;
+            font-family: "DM Sans", sans-serif;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            width: 100%;
+            padding: 28px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(250, 249, 246, 0.94);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: "Playfair Display", serif;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+            font-size: 13px;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        nav a {
+            transition: opacity 0.25s ease;
+        }
+
+        nav a:hover {
+            opacity: 0.5;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            width: 100%;
+            min-height: calc(100vh - 85px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 70px 6% 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(60px, 12vw, 150px);
+            font-weight: 400;
+            letter-spacing: -3px;
+            line-height: 0.95;
+            margin-bottom: 35px;
+        }
+
+        .hero p {
+            max-width: 500px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 45px;
+            color: #666;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 1150px;
+            height: 62vh;
+            min-height: 380px;
+            object-fit: cover;
+            display: block;
+            background: #e8e4dc;
+        }
+
+
+        /* =========================
+           SEKSJONER
+        ========================= */
+
+        section {
+            padding: 110px 6%;
+        }
+
+        .section-title {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(38px, 6vw, 65px);
+            font-weight: 400;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+
+        /* =========================
+           OPPSKRIFTER
+        ========================= */
+
+        .patterns {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+        }
+
+        .pattern-card {
+            background: #f0eee9;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .pattern-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pattern-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            background: #ddd8ce;
+            display: block;
+        }
+
+        .pattern-info {
+            padding: 30px;
+            background: #f0eee9;
+        }
+
+        .pattern-info h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .pattern-info p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .buy-button {
+            display: inline-block;
+            padding: 13px 25px;
+            border: 1px solid #252525;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.25s ease;
+            cursor: pointer;
+        }
+
+        .buy-button:hover {
+            background: #252525;
+            color: white;
+        }
+
+
+        /* =========================
+           OM MEG
+        ========================= */
+
+        #om-meg {
+            background: #eeeae3;
+        }
+
+        .about {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            background: #ddd8ce;
+        }
+
+        .about-text h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 45px;
+            font-weight: 400;
+            margin-bottom: 25px;
+        }
+
+        .about-text p {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 18px;
+            max-width: 500px;
+        }
+
+
+        /* =========================
+           KONTAKT
+        ========================= */
+
+        .contact {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .contact-email {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(25px, 5vw, 45px);
+            display: inline-block;
+            border-bottom: 1px solid #252525;
+            padding-bottom: 5px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 45px 6%;
+            border-top: 1px solid rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #777;
+        }
+
+        .footer-logo {
+            font-family: "Playfair Display", serif;
+            font-size: 20px;
+            color: #252525;
+        }
+
+
+        /* =========================
+           MOBIL
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 20px 5%;
+            }
+
+            .logo {
+                font-size: 23px;
+            }
+
+            nav {
+                gap: 15px;
+                font-size: 10px;
+            }
+
+            .hero {
+                padding: 55px 5% 70px;
+            }
+
+            .hero h1 {
+                font-size: 70px;
+                letter-spacing: -2px;
+            }
+
+            .hero-image {
+                height: 55vh;
+                min-height: 350px;
+            }
+
+            section {
+                padding: 80px 5%;
+            }
+
+            .patterns {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .pattern-image {
+                height: 430px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-image {
+                height: 450px;
+            }
+
+            .about-text h2 {
+                font-size: 38px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <a href="#top" class="logo">
+            bymala
+        </a>
+
+        <nav>
+            <a href="#oppskrifter">Oppskrifter</a>
+            <a href="#om-meg">Om meg</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         FORSIDE
+    ========================= -->
+
+    <main id="top">
+
+        <section class="hero">
+
+            <h1>bymala</h1>
+
+            <p>
+                CROCHET DESIGNS &amp; PATTERNS
+            </p>
+
+
+            <!--
+                BYTT UT BILDET HER
+
+                Når du har lastet opp et bilde til GitHub,
+                kan du endre src="hero.jpg"
+                til navnet på bildet ditt.
+            -->
+
+            <img
+                src="hero.jpg"
+                alt="bymala crochet"
+                class="hero-image"
+            >
+
+        </section>
+
+
+        <!-- =========================
+             OPPSKRIFTER
+        ========================= -->
+
+        <section id="oppskrifter">
+
+            <h2 class="section-title">
+                Oppskrifter
+            </h2>
+
+
+            <div class="patterns">
+
+
+                <!-- JASMINE PC MAPPE -->
+
+                <article class="pattern-card">
+
+                    <img
+                        src="pc-mappe.jpg"
+                        alt="PC mappe oppskrift"
+                        class="pattern-image"
+                    >
+
+                    <div class="pattern-info">
+
+                        <h3>
+                           Jasmine PC-mappe oppskrift
+                        </h3>
+
+                        <p>
+                            Lag din egen heklede Jasmine PC-mappe med denne
+                            digitale PDF-oppskriften.
+                        </p>
+
+                        <div class="price">
+                            55 kr
+                        </div>
+
+                        <!--
+                            BETALINGSKNAPP
+                            Kobles til betalingsløsning senere.
+                        -->
+
+                        <a href="#" class="buy-button">
+                            Kjøp oppskrift
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CROCHET SHAWL -->
+
+                <article class="pattern-card">
+
+                    <img
+                        src="crochet-shawl.jpg"
+                        alt="Crochet shawl oppskrift"
+                        class="pattern-image"
+                    >
+
+                    <div class="pattern-info">
+
+                        <h3>
+                            Crochet shawl oppskrift
+                        </h3>
+
+                        <p>
+                            En elegant heklet sjaloppskrift som
+                            sendes digitalt som PDF.
+                        </p>
+
+                        <div class="price">
+                            55 kr
+                        </div>
+
+                        <!--
+                            BETALINGSKNAPP
+                            Kobles til betalingsløsning senere.
+                        -->
+
+                        <a href="#" class="buy-button">
+                            Kjøp oppskrift
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+                >
+
+
+            
+                   
+
+                  
+                     
+                          
+                 
+
+                  
+                        
+                        
+                  
+
+               
+
+           
+
+   
+
+
+        <!-- =========================
+             KONTAKT
+        ========================= -->
+
+        <section id="kontakt">
+
+            <div class="contact">
+
+                <h2 class="section-title">
+                    Kontakt
+                </h2>
+
+                <p>
+                    Har du spørsmål eller
+                    trenger hjelp med en oppskrift?
+                </p>
+
+                <!--
+                    BYTT UT E-POSTADRESSEN
+                    med din egen.
+                -->
+
+                <a
+                    href="mailto:dinmail@gmail.com"
+                    class="contact-email"
+                >
+                    post.bymalastudio@gmail.com
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            bymala
+        </div>
+
+        <div>
+            © 2026 bymala studio
+        </div>
+
+    </footer>
+
+
+</body>
+</html>
+```
+
